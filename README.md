@@ -1,19 +1,61 @@
-# ERC20_Token
-a smart contract to create own ERC20 token.
+# ERC20 Token on Avalanche Network
 
-This smart contract implements an ERC20 token named MyToken using Solidity and the OpenZeppelin library. The contract includes functionalities for minting new tokens, burning tokens, transferring tokens, and retrieving token details.
+This project implements a custom ERC20 token smart contract on the Avalanche network, providing functionalities like minting, transferring, burning tokens, and checking token details. It can be used for gaming platforms, rewards systems, or decentralized applications.
 
-**Features:**
-Initial Supply: Upon deployment, the contract mints 1,000,000 tokens to the deployer's address.
-Owner: The deployer of the contract is set as the owner.
-Minting: Only the contract owner can mint new tokens to any address.
-Burning: Any token holder can burn (redeem) their own tokens, reducing the total supply.
-Token Details: Users can retrieve token details including name, symbol, decimals, and balance of a specific account.
+## Description
+
+This ERC20 token is deployed on the Avalanche network and utilizes OpenZeppelin's ERC20 contract as the base. The token contract allows the owner to mint new tokens and includes functions for transferring tokens, burning tokens, and retrieving token details like the name, symbol, decimals, and balance of a specified account. This project is ideal for users who want to integrate token functionality into decentralized applications (dApps).
+
+## Getting Started
+
+### Installing
+
+* Clone the repository or download the smart contract file.
+* Ensure you have a compatible development environment for Solidity, such as Hardhat or Truffle.
+* Modify the contract to fit your specific requirements, such as token name and symbol.
+
+### Executing program
+
+* Set up a Solidity development environment:
+
+  Install dependencies like Hardhat or Truffle.
+
+  Ensure OpenZeppelin's ERC20 library is installed.
+  npm install @openzeppelin/contracts
+
+* Compile the smart contract:
+  npx hardhat compile
+
+* Deploy the smart contract to the Avalanche network:
+  npx hardhat run scripts/deploy.js --network avalanche
+
+* Interact with the contract using scripts or via the command line:
+
+  Mint tokens: contract.mint('0xRecipientAddress', 1000);
+
+  Burn tokens: contract.burn(500);
+
+  Get token details: contract.getTokenDetails('0xAccountAddress');
 
 
-**Usage:**
-Deploy the Contract: Deploy the contract to your preferred Ethereum-compatible network using tools like Remix, Truffle, or Hardhat. Provide the token's name and symbol during deployment.
-Minting Tokens: The owner can mint new tokens by calling the mint function with the recipient's address and the amount of tokens to be minted.
-Burning Tokens: Any token holder can burn their tokens by calling the burn function with the amount of tokens they wish to burn.
-Transferring Tokens: Standard ERC20 token transfer functionality is included, allowing token holders to transfer tokens to others.
-Checking Token Details: Users can call the getTokenDetails function with an address to retrieve the token's name, symbol, decimals, and the balance of the specified account.
+
+## Help
+
+Common issues may include the following:
+
+* Ensure the correct Avalanche network is configured in your development environment.
+
+* Verify your account has sufficient AVAX for transaction fees.
+
+To get more help with Hardhat:
+
+npx hardhat help
+
+## Authors
+
+Anisha Kumari (@anishakumarixib@gmail.com)
+
+
+## License
+
+This project is licensed under the Anisha License - see the LICENSE.md file for details
